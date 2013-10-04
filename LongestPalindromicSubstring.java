@@ -7,7 +7,10 @@ public static String Manacher(String s){
 	 int centerIndex = 0;
 	 for(int i=1;i<n-1;i++){
 	   int mirror = 2*C-i; 
-	   cache[i]=(R>i)?cache[mirror]:0;
+	   if(i<R){
+	    	if(cache[mirror]<(R-i)) cache[i]=cache[mirror];
+	    	else cache[i]=R-i;
+	   }
 	   while (T.charAt(i + 1 + cache[i])== T.charAt(i - 1 - cache[i]))
 	     cache[i]++;
 	   if (i+cache[i]>R) {
