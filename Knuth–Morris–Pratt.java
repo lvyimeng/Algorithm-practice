@@ -1,6 +1,6 @@
 public static int KMP(String s,String sub){
 		 int m=0,n=0;
-		 int[] next=new int[s.length()];
+		 int[] next=new int[sub.length()];
 		 KMPtable(sub,next);
 		 while(m+n<s.length()){
 		   if(sub.charAt(n)==s.charAt(m+n)){
@@ -21,7 +21,7 @@ private static void KMPtable(String sub,int[] next){
 		next[0]=-1;
 		next[1]=0;
 		while(pos<sub.length()){
-		  if(next[pos-1]==next[cnd]){
+		  if(sub.charAt(pos-1)==sub.charAt(cnd)){
 		    cnd++;
 		    next[pos]=cnd;
 		    pos++;
