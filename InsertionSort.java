@@ -12,4 +12,19 @@ public static void insertionsort(int[] arr){
   }
 }
 
+public static void shellsort(int[] arr){
+  int[] gaps={701,301,132,57,23,10,4,1};  
+  for(int gap:gaps){
+    for(int i=gap;i<arr.length;i++){
+      int valuetoinsert=arr[i];
+      int pos=i;
+      while(pos>=gap&&valuetoinsert<arr[pos-gap]){
+        arr[pos]=arr[pos-gap];
+        pos-=gap;
+      }
+      arr[pos]=valuetoinsert;
+    }
+  }
+}
+
 }
