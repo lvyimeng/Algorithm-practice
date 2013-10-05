@@ -28,4 +28,27 @@ public static void bubblesort(int[] arr){
   }
 }
 
+public static void oddevensort(int[] arr){
+  boolean sorted=false;
+  while(!sorted){
+    sorted=true;
+    for(int i=0;i<arr.length-1;i+=2){
+      if(arr[i]>arr[i+1]){
+        arr[i]=arr[i]^arr[i+1];
+        arr[i+1]=arr[i]^arr[i+1];
+        arr[i]=arr[i]^arr[i+1];
+        sorted=false;
+      }
+    }
+    for(int i=1;i<arr.length-1;i+=2){
+      if(arr[i]>arr[i+1]){
+        arr[i]=arr[i]^arr[i+1];
+        arr[i+1]=arr[i]^arr[i+1];
+        arr[i]=arr[i]^arr[i+1];
+        sorted=false;
+      }
+    }
+  }
+}
+
 }
