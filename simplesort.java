@@ -51,4 +51,31 @@ public static void oddevensort(int[] arr){
   }
 }
 
+public static void cocktailsort(int[] arr){
+  boolean sorted=false;
+  int bot=0;
+  int top=arr.length-1;
+  while(!sorted){
+    sorted=true;
+    for(int i=0;i<top;i++){
+      if(arr[i]>arr[i+1]){
+        arr[i]=arr[i]^arr[i+1];
+        arr[i+1]=arr[i]^arr[i+1];
+        arr[i]=arr[i]^arr[i+1];
+        sorted=false;
+      }
+    }
+    top--;
+    for(int i=top;i>bot;i--){
+      if(arr[i-1]>arr[i]){
+        arr[i]=arr[i]^arr[i-1];
+        arr[i-1]=arr[i]^arr[i-1];
+        arr[i]=arr[i]^arr[i-1];
+        sorted=false;
+      }
+    }
+    bot++;
+  }
+}
+
 }
