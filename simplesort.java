@@ -57,7 +57,7 @@ public static void cocktailsort(int[] arr){
   int top=arr.length-1;
   while(!sorted){
     sorted=true;
-    for(int i=0;i<top;i++){
+    for(int i=bot;i<top;i++){
       if(arr[i]>arr[i+1]){
         arr[i]=arr[i]^arr[i+1];
         arr[i+1]=arr[i]^arr[i+1];
