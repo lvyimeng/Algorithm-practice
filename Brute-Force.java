@@ -1,5 +1,5 @@
 public Class Brute-Force{
-	
+//written by Yimeng	
 public static int BruteForce(String source,String sub){
   int source_index=0,sub_index=0,index=-1;
   while((source_index<source.length())&&(sub_index<sub.length())){
