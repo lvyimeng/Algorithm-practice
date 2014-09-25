@@ -1,4 +1,4 @@
-public static int KMP(String s,String sub){
+public static int KMP(String s,String sub){//written by Yimeng
   int m=0,n=0;
   int[] next=new int[sub.length()];
   KMPtable(sub,next);
