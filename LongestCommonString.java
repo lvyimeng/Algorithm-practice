@@ -1,4 +1,4 @@
-public static ArrayList<String> LCS(String s1,String s2){
+public static ArrayList<String> LCS(String s1,String s2){//written by Yimeng
 	  int[][] arr=new int[s1.length()][s2.length()];
 	  ArrayList<String> lcs=new ArrayList<String>();
 	  int max=0;
