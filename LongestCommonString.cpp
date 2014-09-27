@@ -84,23 +84,16 @@ public:
 };  
  
 int main()//written by Yimeng  
-{  
-    int a[1000000];
-    int i,first,second;  
-    char s[1000000];  
+{   
+    int a[100],i,first,second;  
+    char s[100];  
     scanf("%s",string);  
     first=strlen(s);  
-    for(i=0;i<first;i++)  
-    {  
-        a[i]=s[i];  
-    }  
+    for(i=0;i<first;i++) a[i]=s[i];
     a[i]=200;  
     scanf("%s",s);
     second=strlen(s);  
-    for(i=0;i<second;i++)  
-    {  
-        a[first+1+i]=s[i];  
-    }  
+    for(i=0;i<second;i++)  a[first+1+i]=s[i];
     SuffixArray sa(a,first+second+1,265);//构建后缀数组  
     int len=0,flag;  
     for(i=1;i<sa.length;i++)  
@@ -120,6 +113,5 @@ int main()//written by Yimeng
     for(i=0;i<len;i++) 
     { 
     printf("%c",a[i+sa.sa[flag-1]]);//打印最小公共串 
-    }  
-    printf("\n");
+    }
 }
