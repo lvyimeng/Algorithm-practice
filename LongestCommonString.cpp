@@ -1,3 +1,5 @@
+//SuffixArray类为模，使用倍增法构造后缀数组，来源网上
+//87行后为LongestCommonString算法，written by Yimeng
 #include<cstdio>  
 #include<cstring>  
 #include<cmath>  
