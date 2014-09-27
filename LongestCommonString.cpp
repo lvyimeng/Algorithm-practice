@@ -82,45 +82,44 @@ public:
         }  
     }  
 };  
-int a[1000000];  
-int main()  
+ 
+int main()//written by Yimeng  
 {  
-    int i,j,k,len1,len2,len;  
-    char s1[1000000];  
-    scanf("%s",s1);  
-    len1=strlen(s1);  
-    for(i=0;i<len1;i++)  
+    int a[1000000];
+    int i,first,second;  
+    char s[1000000];  
+    scanf("%s",string);  
+    first=strlen(s);  
+    for(i=0;i<first;i++)  
     {  
-        a[i]=s1[i];  
+        a[i]=s[i];  
     }  
     a[i]=200;  
-    scanf("%s",s1);  
-    len2=strlen(s1);  
-    for(i=0;i<len2;i++)  
+    scanf("%s",s);
+    second=strlen(s);  
+    for(i=0;i<second;i++)  
     {  
-        a[len1+1+i]=s1[i];  
+        a[first+1+i]=s[i];  
     }  
-    SuffixArray sa(a,len1+len2+1,265);  
-    int ans=0,flag;  
+    SuffixArray sa(a,first+second+1,265);//构建后缀数组  
+    int len=0,flag;  
     for(i=1;i<sa.length;i++)  
     {  
         int x,y;  
         x=min(sa.sa[i],sa.sa[i-1]);  
         y=max(sa.sa[i],sa.sa[i-1]);  
-        if(x<len1&&y>len1)  
+        if(x<first&&y>first)  
         {  
-            if(ans<sa.height[i])  
+            if(len<sa.height[i])  
             {  
-                ans=sa.height[i];  
-                //  flag=i;  
+                len=sa.height[i]; 
+                flag=i;
             }  
         }  
-    }  
-    /* for(i=0,len=sa.sa[flag-1];i<sa.height[flag];i++) 
+    }
+    for(i=0;i<len;i++) 
     { 
-    printf("%c",a[i+len]); 
-    }*/  
-    printf("\n");  
-    printf("%d\n",ans);  
-    return 0;  
+    printf("%c",a[i+sa.sa[flag-1]]);//打印最小公共串 
+    }  
+    printf("\n");
 }
