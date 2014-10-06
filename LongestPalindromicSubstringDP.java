@@ -39,7 +39,7 @@ string expandAroundCenter(string s, int c1, int c2) {
 string longestPalindromeSimple(string s) {
   int n = s.length();
   if (n == 0) return "";
-  string longest = s.substr(0, 1);  // a single char itself is a palindrome
+  string longest = s.substr(0, 1);
   for (int i = 0; i < n-1; i++) {
     string p1 = expandAroundCenter(s, i, i);
     if (p1.length() > longest.length())
