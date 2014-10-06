@@ -1,4 +1,4 @@
-public static String Manacher(String s){
+public static String Manacher(String s){//written by Yimeng
 	 String T=preProcess(s);
 	 int n=T.length();
 	 int[] cache=new int[n];
@@ -9,22 +9,16 @@ public static String Manacher(String s){
 	   int mirror = 2*C-i; 
 	   if(i<R){
 	    	if(cache[mirror]<(R-i)) cache[i]=cache[mirror];
-	    	else cache[i]=R-i;
-	   }
+	    	else cache[i]=R-i;}
 	   while (T.charAt(i + 1 + cache[i])== T.charAt(i - 1 - cache[i]))
 	     cache[i]++;
-	   if (i+cache[i]>R) {
+	   if (i+cache[i]>R){
 	     C=i;
-	     R=i+cache[i];
-	   }
-	 }
-
+	     R=i+cache[i];}}
 	 for (int i = 1; i < n-1; i++) {
-	   if (cache[i] > maxLen) {
+	   if (cache[i] > maxLen){
 	     maxLen = cache[i];
-	     centerIndex = i;
-	   }
-	 } 
+	     centerIndex = i;}} 
 	 return s.substring((centerIndex-1-maxLen)/2,(centerIndex-1+maxLen)/2);
 }
 	
