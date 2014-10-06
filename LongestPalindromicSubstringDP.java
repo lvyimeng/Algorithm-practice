@@ -26,6 +26,7 @@ string longestPalindromeDP(string s) {
   return s.substr(longestBegin, maxLen);
 }
 
+
 string expandAroundCenter(string s, int c1, int c2) {
   int l = c1, r = c2;
   int n = s.length();
